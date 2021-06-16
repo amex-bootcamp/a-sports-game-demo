@@ -1,16 +1,22 @@
 import React, { Component } from "react";
 
 export default class Team extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      shots: 0,
+      score: 0,
+    };
+  }
+
   render() {
     return (
       <div>
-        <h2>Squirrel</h2>
-        <img
-          src="https://raw.githubusercontent.com/p-mayor/davey-react-sports-lab-basic/master/assets/images/raccoon.png"
-          alt=""
-        />
-        <p>Shots: 0</p>
-        <p>Score: 0</p>
+        <h2>{this.props.name}</h2>
+        <img src={this.props.logoSrc} alt={this.props.name} />
+        <p>Shots: {this.state.shots}</p>
+        <p>Score: {this.state.score}</p>
         <p>Shooting %: 0%</p>
         <button>Shoot!</button>
       </div>
