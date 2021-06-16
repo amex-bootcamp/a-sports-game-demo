@@ -6,16 +6,16 @@ export default class Game extends Component {
     return (
       <div>
         <Team
-          name={this.props.squirrels.name}
-          logoSrc={this.props.squirrels.logoSrc}
+          name={this.props.visitingTeam.name}
+          logoSrc={this.props.visitingTeam.logoSrc}
         />
         <div>
           <p>Resets:</p>
           <button>Reset Game</button>
         </div>
         <Team
-          name={this.props.raccoons.name}
-          logoSrc={this.props.raccoons.logoSrc}
+          name={this.props.homeTeam.name}
+          logoSrc={this.props.homeTeam.logoSrc}
         />
       </div>
     );

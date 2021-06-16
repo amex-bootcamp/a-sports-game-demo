@@ -16,11 +16,24 @@ const squirrels = {
     "https://raw.githubusercontent.com/p-mayor/davey-react-sports-lab-basic/master/assets/images/squirrel.png",
 };
 
+const bunnies = {
+  name: "Burlington Bunnies",
+  logoSrc:
+    "https://raw.githubusercontent.com/p-mayor/davey-react-sports-lab-basic/master/assets/images/bunny.png",
+};
+
+const hounds = {
+  name: "Hammond Hounds",
+  logoSrc:
+    "https://raw.githubusercontent.com/p-mayor/davey-react-sports-lab-basic/master/assets/images/hound.png",
+};
+
 function App() {
   return (
     <div>
       <ScoreBoard />
-      <Game squirrels={squirrels} raccoons={raccoons} />
+      <Game visitingTeam={squirrels} homeTeam={raccoons} />
+      <Game visitingTeam={bunnies} homeTeam={hounds} />
     </div>
   );
 }
