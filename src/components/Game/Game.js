@@ -47,6 +47,22 @@ export default class Game extends Component {
     });
   };
 
+  handleReset = () => {
+    this.setState((currentState) => {
+      return {
+        resetCount: currentState.resetCount + 1,
+        home: {
+          shots: 0,
+          score: 0,
+        },
+        visiting: {
+          shots: 0,
+          score: 0,
+        },
+      };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -58,8 +74,8 @@ export default class Game extends Component {
           handleShoot={this.handleVisitingTeamShoot}
         />
         <div>
-          <p>Resets: 0</p>
-          <button>Reset Game</button>
+          <p>Resets: {this.state.resetCount}</p>
+          <button onClick={this.handleReset}>Reset Game</button>
         </div>
         <Team
           name={this.props.homeTeam.name}
