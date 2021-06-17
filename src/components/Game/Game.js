@@ -33,6 +33,20 @@ export default class Game extends Component {
     });
   };
 
+  handleHomeTeamShoot = () => {
+    this.setState((currentState) => {
+      return {
+        home: {
+          shots: currentState.home.shots + 1,
+          score:
+            Math.random() > 0.5
+              ? currentState.home.score + 1
+              : currentState.home.score,
+        },
+      };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -51,6 +65,7 @@ export default class Game extends Component {
           name={this.props.homeTeam.name}
           logoSrc={this.props.homeTeam.logoSrc}
           stats={this.state.home}
+          handleShoot={this.handleHomeTeamShoot}
         />
       </div>
     );
