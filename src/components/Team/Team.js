@@ -44,8 +44,8 @@ export default class Team extends Component {
       <div className="Team">
         <h2>{this.props.name}</h2>
         <img src={this.props.logoSrc} alt={this.props.name} />
-        <p>Shots: {this.state.shots}</p>
-        <p>Score: {this.state.score}</p>
+        <p>Shots: {this.props.stats.shots}</p>
+        <p>Score: {this.props.stats.score}</p>
         {shotPercentageElement}
         <button onClick={this.handleShoot}>Shoot!</button>
       </div>

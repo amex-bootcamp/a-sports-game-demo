@@ -9,12 +9,12 @@ export default class Game extends Component {
     this.state = {
       resetCount: 0,
       home: {
-        shots: 0,
-        score: 0,
+        shots: 10,
+        score: 10,
       },
       visiting: {
-        shots: 0,
-        score: 0,
+        shots: 9,
+        score: 9,
       },
     };
   }
@@ -26,6 +26,7 @@ export default class Game extends Component {
         <Team
           name={this.props.visitingTeam.name}
           logoSrc={this.props.visitingTeam.logoSrc}
+          stats={this.state.visiting}
         />
         <div>
           <p>Resets: 0</p>
@@ -34,6 +35,7 @@ export default class Game extends Component {
         <Team
           name={this.props.homeTeam.name}
           logoSrc={this.props.homeTeam.logoSrc}
+          stats={this.state.home}
         />
       </div>
     );
