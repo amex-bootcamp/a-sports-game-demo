@@ -66,7 +66,7 @@ export default class Game extends Component {
   render() {
     return (
       <div>
-        <ScoreBoard />
+        <ScoreBoard visiting={this.state.visiting} home={this.state.home} />
         <Team
           name={this.props.visitingTeam.name}
           logoSrc={this.props.visitingTeam.logoSrc}
