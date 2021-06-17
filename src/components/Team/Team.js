@@ -13,8 +13,8 @@ export default class Team extends Component {
   render() {
     return (
       <div>
-        <h2>{this.props.name}</h2>
-        <img src={this.props.logoSrc} alt={this.props.name} />
+        <h2>{this.props.animal.name}</h2>
+        <img src={this.props.animal.logoSrc} alt={this.props.name} />
         <p>Shots: {this.state.shots}</p>
         <p>Score: {this.state.score}</p>
         <p>Shooting %: 0%</p>
