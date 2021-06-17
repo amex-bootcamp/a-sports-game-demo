@@ -9,12 +9,12 @@ export default class Game extends Component {
     this.state = {
       resetCount: 0,
       home: {
-        shots: 10,
-        score: 10,
+        shots: 0,
+        score: 0,
       },
       visiting: {
-        shots: 9,
-        score: 9,
+        shots: 0,
+        score: 0,
       },
     };
   }
