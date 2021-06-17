@@ -3,6 +3,22 @@ import Team from "../Team/Team";
 import ScoreBoard from "../ScoreBoard/ScoreBoard";
 
 export default class Game extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      resetCount: 0,
+      home: {
+        shots: 0,
+        score: 0,
+      },
+      visiting: {
+        shots: 0,
+        score: 0,
+      },
+    };
+  }
+
   render() {
     return (
       <div>
