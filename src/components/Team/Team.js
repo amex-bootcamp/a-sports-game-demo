@@ -4,6 +4,7 @@ import "./Team.css";
 export default class Team extends Component {
   handleShoot = () => {
     console.log("shoot!");
+    this.props.handleShoot();
   };
 
   render() {

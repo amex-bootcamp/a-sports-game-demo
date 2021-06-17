@@ -19,6 +19,20 @@ export default class Game extends Component {
     };
   }
 
+  handleVisitingTeamShoot = () => {
+    this.setState((currentState) => {
+      return {
+        visiting: {
+          shots: currentState.visiting.shots + 1,
+          score:
+            Math.random() > 0.5
+              ? currentState.visiting.score + 1
+              : currentState.visiting.score,
+        },
+      };
+    });
+  };
+
   render() {
     return (
       <div>
@@ -27,6 +41,7 @@ export default class Game extends Component {
           name={this.props.visitingTeam.name}
           logoSrc={this.props.visitingTeam.logoSrc}
           stats={this.state.visiting}
+          handleShoot={this.handleVisitingTeamShoot}
         />
         <div>
           <p>Resets: 0</p>
