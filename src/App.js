@@ -1,8 +1,5 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Game from "./components/Game/Game";
-import Team from "./components/Team/Team";
-import ScoreBoard from "./components/ScoreBoard/ScoreBoard";
 
 const raccoons = {
   name: "Russiaville Raccoons",
@@ -31,7 +28,6 @@ const hounds = {
 function App() {
   return (
     <div>
-      <ScoreBoard />
       <Game visitingTeam={squirrels} homeTeam={raccoons} />
       <Game visitingTeam={bunnies} homeTeam={hounds} />
     </div>
