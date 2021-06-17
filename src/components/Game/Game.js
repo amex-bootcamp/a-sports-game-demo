@@ -16,6 +16,7 @@ export default class Game extends Component {
         shots: 0,
         score: 0,
       },
+      showMessage: true,
     };
   }
 
@@ -63,6 +64,14 @@ export default class Game extends Component {
     });
   };
 
+  handleMessageToggle = () => {
+    this.setState((currentState) => {
+      return {
+        // showMessage: currentState.showMessage ? false : true,
+        showMessage: !currentState.showMessage,
+      };
+    });
+  };
   render() {
     return (
       <div>
@@ -72,16 +81,19 @@ export default class Game extends Component {
           logoSrc={this.props.visitingTeam.logoSrc}
           stats={this.state.visiting}
           handleShoot={this.handleVisitingTeamShoot}
+          showMessage={this.state.showMessage}
         />
         <div>
           <p>Resets: {this.state.resetCount}</p>
           <button onClick={this.handleReset}>Reset Game</button>
+          <button onClick={this.handleMessageToggle}>Show</button>
         </div>
         <Team
           name={this.props.homeTeam.name}
           logoSrc={this.props.homeTeam.logoSrc}
           stats={this.state.home}
           handleShoot={this.handleHomeTeamShoot}
+          showMessage={this.state.showMessage}
         />
       </div>
     );

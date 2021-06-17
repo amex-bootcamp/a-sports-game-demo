@@ -25,6 +25,7 @@ export default class Team extends Component {
     return (
       <div className="Team">
         <h2>{this.props.name}</h2>
+        {this.props.showMessage ? <h3>Hello World</h3> : null}
         <img src={this.props.logoSrc} alt={this.props.name} />
         <p>Shots: {this.props.stats.shots}</p>
         <p>Score: {this.props.stats.score}</p>
